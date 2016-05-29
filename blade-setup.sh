@@ -16,3 +16,15 @@ sudo dpkg -i linux*
 
 # login reset loop
 # Set "HandleLidSwitch=ignore" in /etc/systemd/logind.conf
+
+# Vulkan development on Intel
+# Add ppa
+https://launchpad.net/~oibaf/+archive/ubuntu/graphics-drivers
+
+#add this to your  /etc/X11/xorg.conf.d/20-intel.conf  file
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree" "true"
+   Option      "DRI" "3"
+EndSection
